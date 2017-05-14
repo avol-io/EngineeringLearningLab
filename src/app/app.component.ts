@@ -8,5 +8,6 @@
     })
 
     export class AppComponent {
+        defaultPage:false;
       
     }

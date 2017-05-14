@@ -1,13 +1,12 @@
+import { HomeComponent } from './events/components/home/home.component';
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ProposalsComponent } from './proposal/components/proposals.component';
-import { ProposalEditComponent } from './proposal/proposal-edit/proposal-edit.component';
 
 const routes: Routes = [
-    { path: '', redirectTo: '/proposals', pathMatch: 'full' },
-    { path: 'proposals',  component: ProposalsComponent },
-    { path: 'proposals/:id/edit',  component: ProposalEditComponent }
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    { path: 'home',  component: HomeComponent },
+    // { path: 'proposals/:id/edit',  component: ProposalEditComponent }
 ];
 
 @NgModule({

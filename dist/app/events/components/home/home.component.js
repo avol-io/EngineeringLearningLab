@@ -6,21 +6,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var forms_1 = require("@angular/forms");
-var SharedModule = (function () {
-    function SharedModule() {
+var HomeComponent = (function () {
+    function HomeComponent() {
     }
-    return SharedModule;
+    HomeComponent.prototype.ngOnInit = function () { };
+    return HomeComponent;
 }());
-SharedModule = __decorate([
-    core_1.NgModule({
-        imports: [forms_1.FormsModule],
-        exports: [forms_1.FormsModule
-        ],
-        declarations: [],
-        providers: []
+HomeComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'home',
+        templateUrl: 'home.component.html',
+        styleUrls: ['home.component.css'],
+        encapsulation: core_1.ViewEncapsulation.None
     })
-], SharedModule);
-exports.SharedModule = SharedModule;
+], HomeComponent);
+exports.HomeComponent = HomeComponent;
 
-//# sourceMappingURL=shared.module.js.map
+//# sourceMappingURL=home.component.js.map

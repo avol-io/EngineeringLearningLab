@@ -1,0 +1,74 @@
+.home {}
+
+.logo {
+    width: 30vh;
+    height: 30vh;
+    margin: auto;
+    display: block;
+}
+
+.hello {
+    font-family: monospace;
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+.dettaglio {
+    font-family: 'Open Sans', sans-serif;
+    width: 60vw;
+    margin: auto;
+    transform: rotatez(-5deg);
+    text-align: justify;
+    margin-top: -2em;
+}
+
+.footer-bg {
+    position: absolute;
+    bottom: 0px;
+}
+
+.form {
+    margin: auto;
+    margin-top: 1em;
+    .input-group {
+        margin: auto;
+        max-width: 400px;
+    }
+    .invia {
+        display: block;
+        margin: auto;
+        margin-top: 0.5em;
+    }
+}
+
+canvas {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -3;
+}
+
+.mammachebrutto {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -2;
+    background: url(/images/footer.svg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    min-height: 100vh;
+ 
+    width: 100vw; // height: 600px;
+}
+
+@media (max-width:320px) {
+    .dettaglio {
+        // transform: none;
+        // width: 90vw;
+        width: 85vw;
+        // margin: auto;
+    }
+    .mammachebrutto{
+           height: 120%;
+    }
+}
