@@ -1,0 +1,111 @@
+<div class="table-responsive">
+  <table id="proposalList-table" class="table table-striped table-bordered table-hover table-condensed ">
+    <thead class="thead-primary">
+      <tr>
+        <th class="text-center col-md-1">
+          <span (click)="sortByColumn('userAccount.firstName', 'fisrtName'); proposalSortAndFilter()"> First Name
+                        <span class="fa fa-lg" [ngClass]="{'fa-sort':!sortingIcons.fisrtName.sort,
+                                                            'fa-sort-asc':sortingIcons.fisrtName.sort && sortingIcons.fisrtName.asc,
+                                                            'fa-sort-desc':sortingIcons.fisrtName.sort && !sortingIcons.fisrtName.asc}">
+                        </span>
+          </span>
+          <div class="input-group input-group-sm">
+            <input type="text" [(ngModel)]="filterFirstName" (ngModelChange)="proposalSortAndFilter()" class="form-control" />
+          </div>
+        </th>
+        <th class="text-center col-md-1">
+          <span (click)="sortByColumn('userAccount.lastName', 'lastName'); proposalSortAndFilter()"> Last Name
+                        <span class="fa fa-lg" [ngClass]="{'fa-sort':!sortingIcons.lastName.sort,
+                                                            'fa-sort-asc':sortingIcons.lastName.sort && sortingIcons.lastName.asc,
+                                                            'fa-sort-desc':sortingIcons.lastName.sort && !sortingIcons.lastName.asc}">
+                        </span>
+          </span>
+          <div class="input-group input-group-sm">
+            <input type="text" [(ngModel)]="filterLastName" (ngModelChange)="proposalSortAndFilter()" class="form-control">
+          </div>
+        </th>
+        <th class="text-center col-md-1">
+          <span (click)="sortByColumn('manager', 'manager'); proposalSortAndFilter();"> Manager Name
+                        <span class="fa fa-lg" [ngClass]="{'fa-sort':!sortingIcons.manager.sort,
+                                                          'fa-sort-asc':sortingIcons.manager.sort && sortingIcons.manager.asc,
+                                                          'fa-sort-desc':sortingIcons.manager.sort && !sortingIcons.manager.asc}">
+                        </span>
+          </span>
+          <div class="input-group input-group-sm">
+            <input type="text" [(ngModel)]="filterManagerName" (ngModelChange)="proposalSortAndFilter()" class="form-control">
+          </div>
+        </th>
+        <th class="text-center col-md-1">
+          <span (click)="sortByColumn('companyProfile', 'companyProfile'); proposalSortAndFilter();"> Company profile
+                        <span class="fa fa-lg" [ngClass]="{'fa-sort':!sortingIcons.companyProfile.sort,
+                                                          'fa-sort-asc':sortingIcons.companyProfile.sort && sortingIcons.companyProfile.asc,
+                                                          'fa-sort-desc':sortingIcons.companyProfile.sort && !sortingIcons.companyProfile.asc}">
+                       </span>
+          </span>
+          <div class="input-group input-group-sm">
+            <input type="text" [(ngModel)]="filterCompanyProfile" (ngModelChange)="proposalSortAndFilter()" class="form-control">
+          </div>
+        </th>
+        <th class="text-center col-md-1">
+          <span (click)="sortByColumn('nationalWorkProfile', 'nationalWorkProfile'); proposalSortAndFilter();"> National work profile
+                        <span class="fa fa-lg" [ngClass]="{'fa-sort':!sortingIcons.nationalWorkProfile.sort,
+                                                          'fa-sort-asc':sortingIcons.nationalWorkProfile.sort && sortingIcons.nationalWorkProfile.asc,
+                                                          'fa-sort-desc':sortingIcons.nationalWorkProfile.sort && !sortingIcons.nationalWorkProfile.asc}">
+                       </span>
+          </span>
+          <div class="input-group input-group-sm">
+            <input type="text" [(ngModel)]="filterNationalWorkProfile" (ngModelChange)="proposalSortAndFilter()" class="form-control">
+          </div>
+        </th>
+        <th class="text-center col-md-1">
+          <span (click)="sortByColumn('moneyProposal', 'moneyProposal'); proposalSortAndFilter();"> Money proposal
+                        <span class="fa fa-lg" [ngClass]="{'fa-sort':!sortingIcons.nationalWorkProfile.sort,
+                                                          'fa-sort-asc':sortingIcons.nationalWorkProfile.sort && sortingIcons.nationalWorkProfile.asc,
+                                                          'fa-sort-desc':sortingIcons.nationalWorkProfile.sort && !sortingIcons.nationalWorkProfile.asc}">
+                       </span>
+          </span>
+
+        </th>
+        <th class="text-center col-md-1">
+          <span> Motivation
+                   </span>
+        </th>
+        <th class="text-center col-md-1">
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let proposal of proposalSortedFiltered">
+        <td class="text-center col-md-1">
+          {{ proposal.userAccount.firstName }}
+        </td>
+        <td class="text-center col-md-1">
+          {{ proposal.userAccount.lastName }}
+        </td>
+        <td class="text-center col-md-1">
+          {{ proposal.manager }}
+        </td>
+        <td class="text-center col-md-1">
+          {{ proposal.companyProfile }}
+        </td>
+        <td class="text-center col-md-1">
+          {{ proposal.nationalWorkProfile }}
+        </td>
+        <td class="text-center col-md-1">
+          {{ proposal.moneyProposal }}
+        </td>
+        <td class="text-center col-md-1">
+          {{ proposal.motivation }}
+        </td>
+        <td class="text-center col-md-1 " *ngIf="proposal.status != 'Locked'">
+          <button class="btn btn-primary btn-sm" (click)="openEditModal(proposal)">
+                        <span class="fa fa-pencil" aria-hidden="true"></span>
+                    </button>
+          <button class="btn btn-danger btn-sm" (click)="deleteProposal(proposal)">
+                        <span class="fa fa-trash" aria-hidden="true"></span>
+                    </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

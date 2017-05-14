@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/app/shared/models/user-acount.model.ts"],"names":[],"mappings":";AAAA;IAAA;IAGA,CAAC;IAAD,kBAAC;AAAD,CAHA,AAGC,IAAA;AAHY,kCAAW","file":"user-acount.model.js","sourcesContent":["export class UserAccount {\n    firstName: string; \n    lastName: string;\n}"]}

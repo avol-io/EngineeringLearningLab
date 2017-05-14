@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/app/shared/models/proposal-criteria.model.ts"],"names":[],"mappings":";AAAA;IAAA;IAGA,CAAC;IAAD,uBAAC;AAAD,CAHA,AAGC,IAAA;AAHY,4CAAgB","file":"proposal-criteria.model.js","sourcesContent":["export class ProposalCriteria {\n    id_manager: number;\n\tyear: number;\n}"]}

@@ -1,0 +1,48 @@
+<!--<h3> Edit Porposal for: </h3>
+<br> <br>-->
+
+<form [formGroup]="proposalForm" (ngSubmit)="onSubmit()" novalidate>
+    <div *ngIf="editProposal" class="form-group">
+
+        <label> <b> Employee: </b>
+            {{ editProposal.userAccount.firstName }} {{ editProposal.userAccount.lastName }}
+        </label> <br>
+
+        <label> <b> Manager: </b>
+            {{ editProposal.manager }}
+        </label> <br>
+
+        <label> <b> Company Profile: </b> 
+            <select class="form-control" formControlName="companyProfile">
+                <option *ngFor="let companyProfile of companyProfileList" [value]="companyProfile"> {{ companyProfile }} </option>
+            </select>
+        </label> <br>
+
+        <label> <b> National Work Profile: </b>
+            <select class="form-control" formControlName="nationalWorkProfile">
+                <option *ngFor="let nationalWorkProfile of nationalWorkProfileList" [value]="nationalWorkProfile"> {{ nationalWorkProfile }} </option>
+            </select>
+        </label> <br>
+
+        <label> <b> Money Proposal: </b>
+            <select class="form-control" formControlName="moneyProposal">
+                    <option *ngFor="let moneyProposal of moneyProposalList" [value]="moneyProposal"> {{ moneyProposal }} </option>
+            </select>
+        </label> <br>
+
+        <label> <b> Motivation: </b>
+            <textarea type="text" class="form-control" value="{{ editProposal.motivation }}" formControlName="motivation" style="width:500px;"
+                [ngClass]="proposalForm.controls['motivation'].hasError('required') ? 'borderValidation' : ''">
+            </textarea>
+        </label> <br>
+
+        <button type="submit" class="btn btn-primary" [disabled]="proposalForm.pristine || proposalForm.invalid"> <span class="fa fa-check" aria-hidden="true"></span> </button>
+        <button type="button" class="btn btn-danger" (click)="revert()"> <span class="fa fa-times" aria-hidden="true"></span></button>
+
+    </div>
+</form>
+
+<!--test code-->
+    <!--<p> Form value: {{ proposalForm.value | json }} </p>
+    <p> Form status: {{ proposalForm.status  }} </p>-->
+<!--test code-->
