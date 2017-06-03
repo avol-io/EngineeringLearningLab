@@ -9,17 +9,18 @@ import { Component, OnInit,Input ,EventEmitter,Output} from '@angular/core';
 	templateUrl: 'events-item.component.html',
 	styleUrls: ['events-item.component.css']
 })
-
 export class EventsItemComponent {
 
 	@Input('event')
 	private model: Event;
-  	@Output('onFavorito') protected callbackActionOnFavorito: EventEmitter<Event> = new EventEmitter();
+
+  	@Output('onFavorito') 
+	protected callbackActionOnFavorito: EventEmitter<Event> = new EventEmitter();
+
+
 	constructor() { 
 
 	}
-
-
 
 	
 	onFavorito(event:Event){
