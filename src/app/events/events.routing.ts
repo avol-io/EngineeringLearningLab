@@ -4,6 +4,7 @@ import { HomeComponent } from './components/home/home.component';
 import { EventsComponent } from './events.component';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
+import {RegistrationComponent} from "./components/registration/registration.component";
 
 
 
@@ -13,6 +14,7 @@ import { NgModule } from '@angular/core';
             path: 'events',
             component: EventsComponent,
             children: [
+                { path: 'registration', component: RegistrationComponent },
                 { path: 'list', component: EventsPageComponent },
                 { path: '', component: HomeComponent }
             ]

@@ -15,6 +15,8 @@ var core_1 = require("@angular/core");
 var shared_module_1 = require("./../shared/shared.module");
 var events_component_1 = require("./events.component");
 var common_1 = require("@angular/common");
+var registration_component_1 = require("./components/registration/registration.component");
+var registration_service_1 = require("./services/registration.service");
 var EventsModule = (function () {
     function EventsModule() {
     }
@@ -32,9 +34,13 @@ EventsModule = __decorate([
             events_component_1.EventsComponent,
             home_component_1.HomeComponent,
             events_page_component_1.EventsPageComponent,
-            events_item_component_1.EventsItemComponent
+            events_item_component_1.EventsItemComponent,
+            registration_component_1.RegistrationComponent
         ],
-        providers: [events_service_1.EventsService],
+        providers: [
+            events_service_1.EventsService,
+            registration_service_1.RegistrationService
+        ],
         bootstrap: []
     })
 ], EventsModule);
