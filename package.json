@@ -57,7 +57,7 @@
     "concurrently": "^3.2.0",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
-    "gulp-clean-css": "^2.3.2",
+    "gulp-clean-css": "^3.4.1",
     "gulp-concat": "^2.6.0",
     "gulp-if": "^2.0.2",
     "gulp-inject": "^4.1.0",
