@@ -2,7 +2,7 @@ import { Media } from './media.models';
 export class Event {
 
     private _title: string;
-    private _descriptition: string;
+    private _description: string;
     private _date: Date;
     private _slide: Media;
     private _video: Media;
@@ -18,12 +18,12 @@ export class Event {
         this._title = value;
     }
 
-    public get descriptition(): string {
-        return this._descriptition;
+    public get description(): string {
+        return this._description;
     }
 
-    public set descriptition(value: string) {
-        this._descriptition = value;
+    public set description(value: string) {
+        this._description = value;
     }
 
     public get date(): Date {

@@ -12,7 +12,6 @@ import { NgModule } from '@angular/core';
         RouterModule.forChild([{
             path: 'events',
             component: EventsComponent,
-            data: { breadcrumb: 'Conti giudiziali' },
             children: [
                 { path: 'list', component: EventsPageComponent },
                 { path: '', component: HomeComponent }
