@@ -1,10 +1,11 @@
 "use strict";
 var User = (function () {
-    function User(name, surname, email, id) {
+    function User(name, surname, email, venue, id) {
         this._id = id;
         this._name = name;
         this._surname = surname;
         this._email = email;
+        this._venue = venue;
     }
     Object.defineProperty(User.prototype, "id", {
         get: function () {
@@ -42,6 +43,16 @@ var User = (function () {
         },
         set: function (value) {
             this._email = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(User.prototype, "venue", {
+        get: function () {
+            return this._venue;
+        },
+        set: function (value) {
+            this._venue = value;
         },
         enumerable: true,
         configurable: true

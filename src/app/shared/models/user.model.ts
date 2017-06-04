@@ -5,11 +5,12 @@ export class User {
     private _email: string;
     private _venue: string;
 
-    constructor(name: string, surname: string, email: string, id?: number) {
+    constructor(name: string, surname: string, email: string, venue: string, id?: number) {
         this._id = id;
         this._name = name;
         this._surname = surname;
         this._email = email;
+        this._venue = venue;
     }
 
     get id(): number {
@@ -42,5 +43,13 @@ export class User {
 
     set email(value: string) {
         this._email = value;
+    }
+
+    get venue(): string {
+        return this._venue;
+    }
+
+    set venue(value: string) {
+        this._venue = value;
     }
 }
