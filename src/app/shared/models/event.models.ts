@@ -6,9 +6,7 @@ export class Event {
     private _date: Date;
     private _slide: Media;
     private _video: Media;
-    private _favorite:boolean=false;
-
-
+    private _favorite:boolean = false;
 
     public get title(): string {
         return this._title;

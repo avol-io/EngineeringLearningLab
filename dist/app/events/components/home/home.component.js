@@ -16,7 +16,7 @@ var HomeComponent = (function () {
     }
     HomeComponent.prototype.ngOnInit = function () { };
     HomeComponent.prototype.registration = function () {
-        this.router.navigate(['events', 'registration']);
+        this.router.navigate(['eventi', 'registrazione']);
     };
     return HomeComponent;
 }());

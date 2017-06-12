@@ -17,7 +17,7 @@ var events_component_1 = require("./events.component");
 var common_1 = require("@angular/common");
 var registration_component_1 = require("./components/registration/registration.component");
 var registration_service_1 = require("./services/registration.service");
-var create_event_component_1 = require("./components/create-event/create-event.component");
+var add_event_component_1 = require("./components/add-event/add-event.component");
 var EventsModule = (function () {
     function EventsModule() {
     }
@@ -37,7 +37,7 @@ EventsModule = __decorate([
             events_page_component_1.EventsPageComponent,
             events_item_component_1.EventsItemComponent,
             registration_component_1.RegistrationComponent,
-            create_event_component_1.CreateEventComponent
+            add_event_component_1.AddEventComponent
         ],
         providers: [
             events_service_1.EventsService,

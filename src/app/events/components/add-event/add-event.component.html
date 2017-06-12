@@ -1,0 +1,11 @@
+<h2>Inserisci evento</h2>
+<h3><i>Inserisci un nuovo evento</i></h3>
+<form [formGroup]="eventForm" novalidate>
+    <div class="form-group">
+        <label class="center-block">Titolo:
+            <input class="form-control" formControlName="title">
+        </label>
+    </div>
+</form>
+<p>Form value: {{ eventForm.value | json }}</p>
+<p>Form status: {{ eventForm.status | json }}</p>

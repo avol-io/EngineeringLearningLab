@@ -10,8 +10,7 @@ import {EventsComponent} from './events.component';
 import {CommonModule} from '@angular/common';
 import {RegistrationComponent} from "./components/registration/registration.component";
 import {RegistrationService} from "./services/registration.service";
-import {CreateEventComponent} from "./components/create-event/create-event.component";
-
+import {AddEventComponent} from "./components/add-event/add-event.component";
 
 @NgModule({
     imports: [
@@ -26,7 +25,7 @@ import {CreateEventComponent} from "./components/create-event/create-event.compo
         EventsPageComponent,
         EventsItemComponent,
         RegistrationComponent,
-        CreateEventComponent
+        AddEventComponent
     ],
     providers: [
         EventsService,

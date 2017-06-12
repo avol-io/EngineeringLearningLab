@@ -16,6 +16,6 @@ export class HomeComponent implements OnInit {
 	ngOnInit() { }
 
 	private registration() {
-        this.router.navigate(['events', 'registration']);
+        this.router.navigate(['eventi', 'registrazione']);
     }
 }
