@@ -11,6 +11,7 @@ import {CommonModule} from '@angular/common';
 import {RegistrationComponent} from "./components/registration/registration.component";
 import {RegistrationService} from "./services/registration.service";
 import {AddEventComponent} from "./components/add-event/add-event.component";
+import {SubformSpeakerComponent} from "./components/subform-speaker/subform-speaker.component";
 
 @NgModule({
     imports: [
@@ -25,7 +26,8 @@ import {AddEventComponent} from "./components/add-event/add-event.component";
         EventsPageComponent,
         EventsItemComponent,
         RegistrationComponent,
-        AddEventComponent
+        AddEventComponent,
+        SubformSpeakerComponent
     ],
     providers: [
         EventsService,

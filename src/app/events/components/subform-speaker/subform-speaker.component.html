@@ -1,0 +1,30 @@
+<div [formGroup]="myForm" class="well well-lg">
+    <h4>Speaker</h4>
+    <div class="form-group">
+        <label class="center-block">Nome:
+            <input class="form-control" formControlName="name">
+        </label>
+    </div>
+    <div class="form-group">
+        <label class="center-block">Cognome:
+            <input class="form-control" formControlName="surname">
+        </label>
+    </div>
+    <div formGroupName="address" class="row">
+        <div class="col-xs-4">
+            <label class="center-block">Indirizzo:
+                <input class="form-control" formControlName="street">
+            </label>
+        </div>
+        <div class="col-xs-4">
+            <label class="center-block">CAP:
+                <input class="form-control" formControlName="postalCode">
+            </label>
+        </div>
+        <div class="col-xs-4">
+            <label class="center-block">Comune:
+                <input class="form-control" formControlName="city">
+            </label>
+        </div>
+    </div>
+</div>

@@ -21,7 +21,6 @@ export class AddEventComponent {
         this.logChanges();
     }
 
-
     createForm(): void {
         // this.myForm = new FormGroup ({
         //     title: new FormControl()
@@ -31,16 +30,7 @@ export class AddEventComponent {
             title: ['', Validators.required],
             type: '',
             description: '',
-            annotation: '',
-            speaker: this.fb.group({
-                name: ['', Validators.required],
-                surname: ['', Validators.required],
-                address: this.fb.group({
-                    street: '',
-                    postalCode: ['', Validators.pattern(/^\d{5}$/)],
-                    city: ''
-                })
-            })
+            annotation: ''
         });
     }
 
