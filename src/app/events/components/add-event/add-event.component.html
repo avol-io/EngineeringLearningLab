@@ -1,11 +1,62 @@
-<h2>Inserisci evento</h2>
-<h3><i>Inserisci un nuovo evento</i></h3>
-<form [formGroup]="eventForm" novalidate>
-    <div class="form-group">
-        <label class="center-block">Titolo:
-            <input class="form-control" formControlName="title">
-        </label>
-    </div>
-</form>
-<p>Form value: {{ eventForm.value | json }}</p>
-<p>Form status: {{ eventForm.status | json }}</p>
+<div class="container">
+    <h2>Inserisci evento</h2>
+    <h3><i>Inserisci un nuovo evento</i></h3>
+    <form [formGroup]="eventForm" novalidate>
+        <div class="form-group">
+            <label class="center-block">Titolo:
+                <input class="form-control" formControlName="title">
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="center-block">Tipo:
+                <select class="form-control" formControlName="type">
+                    <option *ngFor="let t of eventTypes" [value]="t">{{t}}</option>
+                </select>
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="center-block">Descrizione:
+                <textarea rows="4" class="form-control" formControlName="description"></textarea>
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="center-block">Note:
+                <textarea rows="2" class="form-control" formControlName="annotation"></textarea>
+            </label>
+        </div>
+        <div formGroupName="speaker" class="well well-lg">
+            <h4>Speaker</h4>
+            <div class="form-group">
+                <label class="center-block">Nome:
+                    <input class="form-control" formControlName="name">
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="center-block">Cognome:
+                    <input class="form-control" formControlName="surname">
+                </label>
+            </div>
+            <div formGroupName="address" class="row">
+                <div class="col-xs-4">
+                    <label class="center-block">Indirizzo:
+                        <input class="form-control" formControlName="street">
+                    </label>
+                </div>
+                <div class="col-xs-4">
+                    <label class="center-block">CAP:
+                        <input class="form-control" formControlName="postalCode">
+                    </label>
+                </div>
+                <div class="col-xs-4">
+                    <label class="center-block">Comune:
+                        <input class="form-control" formControlName="city">
+                    </label>
+                </div>
+            </div>
+        </div>
+    </form>
+    <p>Form value: {{ eventForm.value | json }}</p>
+    <p>Form status: {{ eventForm.status | json }}</p>
+    <p>Form pristine: {{ eventForm.pristine | json }}</p>
+    <p>Form touched: {{ eventForm.touched | json }}</p>
+</div>

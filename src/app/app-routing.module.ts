@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 const routes: Routes = [
-    { path: '', redirectTo: '/events', pathMatch: 'full' },
+    { path: '', redirectTo: '/eventi', pathMatch: 'full' },
     // { path: 'proposals/:id/edit',  component: ProposalEditComponent }
 ];
 

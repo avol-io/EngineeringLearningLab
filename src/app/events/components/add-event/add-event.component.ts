@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import { Component } from '@angular/core';
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {EventsService} from "../../services/events.service";
 
 @Component({
     moduleId: module.id,
@@ -8,15 +9,35 @@ import {FormControl, FormGroup} from "@angular/forms";
     styleUrls: ['add-event.component.css']
 })
 
-export class AddEventComponent implements OnInit {
+export class AddEventComponent {
     private eventForm: FormGroup;
+    private eventTypes: Array<String>;
 
-    constructor() {
+    constructor(private fb: FormBuilder, private eventsService: EventsService) {
+        this.createForm();
+        this.eventTypes = this.eventsService.getEventTypes();
     }
 
-    ngOnInit() {
-        this.eventForm = new FormGroup ({
-            title: new FormControl()
+
+    createForm() {
+        // this.eventForm = new FormGroup ({
+        //     title: new FormControl()
+        // });
+
+        this.eventForm = this.fb.group({
+            title: ['', Validators.required],
+            type: '',
+            description: [''],
+            annotation: '',
+            speaker: this.fb.group({
+                name: '',
+                surname: '',
+                address: this.fb.group({
+                    street: '',
+                    postalCode: ['', Validators.pattern(/^\d{5}$/)],
+                    city: ''
+                })
+            })
         });
     }
 }
