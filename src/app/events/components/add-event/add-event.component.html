@@ -1,12 +1,7 @@
-<div class="container">
+<div class="container" [hidden]="submitted">
     <h2>Inserisci evento</h2>
     <h3><i>Inserisci un nuovo evento</i></h3>
-    <form [formGroup]="eventForm" novalidate>
-        <div class="form-group">
-            <label class="center-block">Titolo:
-                <input class="form-control" formControlName="title">
-            </label>
-        </div>
+    <form [formGroup]="myForm" novalidate>
         <div class="form-group">
             <label class="center-block">Tipo:
                 <select class="form-control" formControlName="type">
@@ -15,8 +10,13 @@
             </label>
         </div>
         <div class="form-group">
+            <label class="center-block">Titolo:
+                <input class="form-control" formControlName="title">
+            </label>
+        </div>
+        <div class="form-group">
             <label class="center-block">Descrizione:
-                <textarea rows="4" class="form-control" formControlName="description"></textarea>
+                <textarea rows="3" class="form-control" formControlName="description"></textarea>
             </label>
         </div>
         <div class="form-group">
@@ -54,9 +54,48 @@
                 </div>
             </div>
         </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-warning" (click)="myForm.reset()">Reset</button>
+            <button type="button" class="btn btn-success" (click)="addEvent()" [disabled]="myForm.invalid">Invia</button>
+        </div>
     </form>
-    <p>Form value: {{ eventForm.value | json }}</p>
-    <p>Form status: {{ eventForm.status | json }}</p>
-    <p>Form pristine: {{ eventForm.pristine | json }}</p>
-    <p>Form touched: {{ eventForm.touched | json }}</p>
+    <p>Form value: {{ myForm.value | json }}</p>
+    <p>Form status: {{ myForm.status | json }}</p>
+    <p>Form pristine: {{ myForm.pristine | json }}</p>
+    <p>Form touched: {{ myForm.touched | json }}</p>
+</div>
+
+
+<div class="container" [hidden]="!submitted">
+    <h2>Hai inserito un nuovo evento:</h2>
+    <table class="table table-striped">
+        <tbody>
+        <tr>
+            <th>Tipo</th>
+            <td>{{myForm.get('type').value}}</td>
+        </tr>
+        <tr>
+            <th>Titolo</th>
+            <td>{{myForm.get('title').value}}</td>
+        </tr>
+        <tr>
+            <th>Descrizione</th>
+            <td>{{myForm.get('description').value}}</td>
+        </tr>
+        <tr>
+            <th>Note</th>
+            <td>{{myForm.get('annotation').value}}</td>
+        </tr>
+
+        <tr>
+            <th>Speaker</th>
+            <td>{{myForm.get('speaker.name').value + ' ' + myForm.get('speaker.surname').value}}</td>
+        </tr>
+        <tr>
+            <th>Domicilio speaker</th>
+            <td>{{myForm.get('speaker.address.street').value + ', ' + myForm.get('speaker.address.postalCode').value + ', ' + myForm.get('speaker.address.city').value}}</td>
+        </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-primary" (click)="submitted=false">Indietro</button>
 </div>

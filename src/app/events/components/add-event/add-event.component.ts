@@ -10,28 +10,31 @@ import {EventsService} from "../../services/events.service";
 })
 
 export class AddEventComponent {
-    private eventForm: FormGroup;
+    private myForm: FormGroup;
     private eventTypes: Array<String>;
+    private submitted: boolean;
 
     constructor(private fb: FormBuilder, private eventsService: EventsService) {
-        this.createForm();
+        this.submitted = false;
         this.eventTypes = this.eventsService.getEventTypes();
+        this.createForm();
+        this.logChanges();
     }
 
 
-    createForm() {
-        // this.eventForm = new FormGroup ({
+    createForm(): void {
+        // this.myForm = new FormGroup ({
         //     title: new FormControl()
         // });
 
-        this.eventForm = this.fb.group({
+        this.myForm = this.fb.group({
             title: ['', Validators.required],
             type: '',
-            description: [''],
+            description: '',
             annotation: '',
             speaker: this.fb.group({
-                name: '',
-                surname: '',
+                name: ['', Validators.required],
+                surname: ['', Validators.required],
                 address: this.fb.group({
                     street: '',
                     postalCode: ['', Validators.pattern(/^\d{5}$/)],
@@ -39,5 +42,16 @@ export class AddEventComponent {
                 })
             })
         });
+    }
+
+    logChanges() {
+        let titleControl = this.myForm.get('title');
+        titleControl.valueChanges.subscribe((changes) => {
+           console.log(changes);
+        });
+    }
+
+    addEvent(): void {
+        this.submitted = true;
     }
 }
