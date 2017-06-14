@@ -18,7 +18,7 @@ export class AddEventComponent {
         this.submitted = false;
         this.eventTypes = this.eventsService.getEventTypes();
         this.createForm();
-        this.logChanges();
+        // this.logChanges();
     }
 
     createForm(): void {
@@ -29,7 +29,7 @@ export class AddEventComponent {
         this.myForm = this.fb.group({
             title: ['', Validators.required],
             type: '',
-            description: '',
+            description: ['', Validators.required],
             annotation: ''
         });
     }
@@ -38,7 +38,6 @@ export class AddEventComponent {
         let titleControl = this.myForm.get('title');
         titleControl.valueChanges.subscribe((changes) => {
            console.log(changes);
-            console.log(this.myForm);
         });
     }
 

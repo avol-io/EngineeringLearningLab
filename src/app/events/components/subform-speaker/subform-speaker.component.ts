@@ -24,9 +24,9 @@ export class SubformSpeakerComponent implements OnInit {
 
     createForm(): void {
         this.myForm = this.fb.group({
-            name: ['', Validators.required],
-            surname: ['', Validators.required],
-            email: ['', [Validators.required, validateEmail], emailUnique(this.registrationService)],
+            name: '',
+            surname: '',
+            email: ['', validateEmail, emailUnique(this.registrationService)],
             address: this.fb.group({
                 street: '',
                 postalCode: ['', Validators.pattern(/^\d{5}$/)],

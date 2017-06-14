@@ -11,13 +11,15 @@
         </div>
         <div class="form-group">
             <label class="center-block">Titolo:
-                <input class="form-control" formControlName="title">
+                <input class="form-control" formControlName="title" data-error="Bruh, that email address is invalid">
             </label>
+            <div *ngIf="myForm.controls.title.dirty && myForm.controls.title.hasError('required')" class="input-error-message">Campo obbligatorio</div>
         </div>
         <div class="form-group">
             <label class="center-block">Descrizione:
                 <textarea rows="3" class="form-control" formControlName="description"></textarea>
             </label>
+            <div *ngIf="myForm.controls.description.dirty && myForm.controls.description.hasError('required')" class="input-error-message">Campo obbligatorio</div>
         </div>
         <div class="form-group">
             <label class="center-block">Note:
@@ -43,7 +45,7 @@
     <h2>Hai inserito un nuovo evento:</h2>
     <table class="table table-striped">
         <tbody>
-        <tr>
+        <tr *ngIf="myForm.controls.type.value !== ''">
             <th>Tipo</th>
             <td>{{myForm.get('type').value}}</td>
         </tr>
@@ -55,16 +57,16 @@
             <th>Descrizione</th>
             <td>{{myForm.get('description').value}}</td>
         </tr>
-        <tr>
+        <tr *ngIf="myForm.controls.annotation.value !== ''">
             <th>Note</th>
             <td>{{myForm.get('annotation').value}}</td>
         </tr>
 
-        <tr>
+        <tr *ngIf="myForm.controls.speaker.dirty">
             <th>Speaker</th>
             <td>{{myForm.get('speaker.name').value + ' ' + myForm.get('speaker.surname').value}}</td>
         </tr>
-        <tr>
+        <tr *ngIf="myForm.controls.speaker.controls.address.dirty">
             <th>Domicilio speaker</th>
             <td>{{myForm.get('speaker.address.street').value + ', ' + myForm.get('speaker.address.postalCode').value + ', ' + myForm.get('speaker.address.city').value}}</td>
         </tr>
