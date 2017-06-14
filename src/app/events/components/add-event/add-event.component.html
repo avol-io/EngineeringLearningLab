@@ -29,7 +29,7 @@
 
         <div class="form-group">
             <button type="button" class="btn btn-warning" (click)="myForm.reset()">Reset</button>
-            <button type="button" class="btn btn-success" (click)="addEvent()" [disabled]="myForm.invalid">Invia</button>
+            <button type="button" class="btn btn-success" (click)="addEvent()" [disabled]="myForm.pending || myForm.invalid">Invia</button>
         </div>
     </form>
     <p>Form value: {{ myForm.value | json }}</p>

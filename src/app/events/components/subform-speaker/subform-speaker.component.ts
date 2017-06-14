@@ -1,5 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from "@angular/core";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {validateEmail} from "../../../shared/validators/email.validator";
+import {emailUnique} from "../../../shared/validators/email-unique.async-validator";
+import {RegistrationService} from "../../services/registration.service";
 
 @Component({
     moduleId: module.id,
@@ -12,7 +15,7 @@ export class SubformSpeakerComponent implements OnInit {
     private myForm: FormGroup;
     @Input() private parentForm: FormGroup;
 
-    constructor(private fb: FormBuilder) {
+    constructor(private fb: FormBuilder, private registrationService: RegistrationService) {
     }
 
     ngOnInit(): void {
@@ -23,6 +26,7 @@ export class SubformSpeakerComponent implements OnInit {
         this.myForm = this.fb.group({
             name: ['', Validators.required],
             surname: ['', Validators.required],
+            email: ['', [Validators.required, validateEmail], emailUnique(this.registrationService)],
             address: this.fb.group({
                 street: '',
                 postalCode: ['', Validators.pattern(/^\d{5}$/)],

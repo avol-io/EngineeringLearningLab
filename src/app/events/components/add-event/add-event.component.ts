@@ -38,6 +38,7 @@ export class AddEventComponent {
         let titleControl = this.myForm.get('title');
         titleControl.valueChanges.subscribe((changes) => {
            console.log(changes);
+            console.log(this.myForm);
         });
     }
 

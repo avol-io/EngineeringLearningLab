@@ -13,7 +13,7 @@ import { AddEventComponent } from "./components/add-event/add-event.component";
             component: EventsComponent,
             children: [
                 { path: 'registrazione', component: RegistrationComponent },
-                { path: 'aggiungi-evento', component: AddEventComponent },
+                { path: 'aggiungi', component: AddEventComponent },
                 { path: 'list', component: EventsPageComponent },
                 { path: '', component: HomeComponent }
             ]
