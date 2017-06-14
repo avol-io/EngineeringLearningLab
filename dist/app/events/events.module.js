@@ -19,7 +19,6 @@ var common_1 = require("@angular/common");
 var registration_component_1 = require("./components/registration/registration.component");
 var registration_service_1 = require("./services/registration.service");
 var add_event_component_1 = require("./components/add-event/add-event.component");
-var subform_speaker_component_1 = require("./components/subform-speaker/subform-speaker.component");
 var EventsModule = (function () {
     function EventsModule() {
     }
@@ -39,8 +38,7 @@ EventsModule = __decorate([
             events_page_component_1.EventsPageComponent,
             events_item_component_1.EventsItemComponent,
             registration_component_1.RegistrationComponent,
-            add_event_component_1.AddEventComponent,
-            subform_speaker_component_1.SubformSpeakerComponent
+            add_event_component_1.AddEventComponent
         ],
         providers: [
             events_service_1.EventsService,

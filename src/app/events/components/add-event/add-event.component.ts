@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {EventsService} from "../../services/events.service";
+import {validateEmail} from "../../../shared/validators/email.validator";
+import {emailUnique} from "../../../shared/validators/email-unique.async-validator";
+import {RegistrationService} from "../../services/registration.service";
 
 @Component({
     moduleId: module.id,
@@ -14,7 +17,7 @@ export class AddEventComponent {
     private eventTypes: Array<String>;
     private submitted: boolean;
 
-    constructor(private fb: FormBuilder, private eventsService: EventsService) {
+    constructor(private fb: FormBuilder, private eventsService: EventsService, private registrationService: RegistrationService) {
         this.submitted = false;
         this.eventTypes = this.eventsService.getEventTypes();
         this.createForm();
@@ -30,7 +33,17 @@ export class AddEventComponent {
             title: ['', Validators.required],
             type: '',
             description: ['', Validators.required],
-            annotation: ''
+            annotation: '',
+            speaker: this.fb.group({
+                name: '',
+                surname: '',
+                email: ['', validateEmail, emailUnique(this.registrationService)],
+                address: this.fb.group({
+                    street: '',
+                    postalCode: ['', Validators.pattern(/^\d{5}$/)],
+                    city: ''
+                })
+            })
         });
     }
 
