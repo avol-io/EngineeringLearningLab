@@ -1,4 +1,4 @@
-<div [formGroup]="myForm" class="well well-lg">
+<div [formGroup]="speakerForm" class="well well-lg">
     <h4>Speaker</h4>
     <div class="form-group">
         <label class="center-block">Nome:
@@ -14,9 +14,9 @@
         <label class="center-block">E-mail:
             <input class="form-control" formControlName="email">
         </label>
-        <div *ngIf="myForm.controls.email.dirty && myForm.controls.email.hasError('validateEmail')" class="input-error-message">Indirizzo e-mail non valido</div>
-        <div *ngIf="myForm.controls.email.dirty && myForm.controls.email.hasError('emailAlreadyExist')" class="input-error-message">Indirizzo e-mail già registrato</div>
-        <div *ngIf="myForm.controls.email.dirty && myForm.controls.email.hasError('serverError')" class="input-error-message">Impossibile verificare l'indirizzo e-mail</div>
+        <div *ngIf="speakerForm.controls.email.dirty && speakerForm.controls.email.hasError('validateEmail')" class="input-error-message">Indirizzo e-mail non valido</div>
+        <div *ngIf="speakerForm.controls.email.dirty && speakerForm.controls.email.hasError('emailAlreadyExist')" class="input-error-message">Indirizzo e-mail già registrato</div>
+        <div *ngIf="speakerForm.controls.email.dirty && speakerForm.controls.email.hasError('serverError')" class="input-error-message">Impossibile verificare l'indirizzo e-mail</div>
     </div>
     <div formGroupName="address" class="row">
         <div class="col-xs-4">
@@ -28,7 +28,7 @@
             <label class="center-block">CAP:
                 <input class="form-control" formControlName="postalCode">
             </label>
-            <div *ngIf="myForm.controls.address.controls.postalCode.dirty && myForm.controls.address.controls.postalCode.hasError('pattern')" class="input-error-message">Codice CAP non valido</div>
+            <div *ngIf="speakerForm.controls.address.controls.postalCode.dirty && speakerForm.controls.address.controls.postalCode.hasError('pattern')" class="input-error-message">Codice CAP non valido</div>
         </div>
         <div class="col-xs-4">
             <label class="center-block">Comune:

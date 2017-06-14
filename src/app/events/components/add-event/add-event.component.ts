@@ -10,7 +10,7 @@ import {EventsService} from "../../services/events.service";
 })
 
 export class AddEventComponent {
-    private myForm: FormGroup;
+    private eventForm: FormGroup;
     private eventTypes: Array<String>;
     private submitted: boolean;
 
@@ -22,11 +22,11 @@ export class AddEventComponent {
     }
 
     createForm(): void {
-        // this.myForm = new FormGroup ({
+        // this.eventForm = new FormGroup ({
         //     title: new FormControl()
         // });
 
-        this.myForm = this.fb.group({
+        this.eventForm = this.fb.group({
             title: ['', Validators.required],
             type: '',
             description: ['', Validators.required],
@@ -35,7 +35,7 @@ export class AddEventComponent {
     }
 
     logChanges() {
-        let titleControl = this.myForm.get('title');
+        let titleControl = this.eventForm.get('title');
         titleControl.valueChanges.subscribe((changes) => {
            console.log(changes);
         });

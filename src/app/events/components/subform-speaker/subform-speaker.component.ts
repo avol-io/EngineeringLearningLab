@@ -12,7 +12,7 @@ import {RegistrationService} from "../../services/registration.service";
 })
 
 export class SubformSpeakerComponent implements OnInit {
-    private myForm: FormGroup;
+    private speakerForm: FormGroup;
     @Input() private parentForm: FormGroup;
 
     constructor(private fb: FormBuilder, private registrationService: RegistrationService) {
@@ -23,7 +23,7 @@ export class SubformSpeakerComponent implements OnInit {
     }
 
     createForm(): void {
-        this.myForm = this.fb.group({
+        this.speakerForm = this.fb.group({
             name: '',
             surname: '',
             email: ['', validateEmail, emailUnique(this.registrationService)],
@@ -34,6 +34,6 @@ export class SubformSpeakerComponent implements OnInit {
             })
         });
 
-        this.parentForm.addControl('speaker', this.myForm);
+        this.parentForm.addControl('speaker', this.speakerForm);
     }
 }
