@@ -30,8 +30,8 @@ export class AddEventComponent {
         // });
 
         this.eventForm = this.fb.group({
-            title: ['', Validators.required],
             type: '',
+            title: ['', Validators.required],
             description: ['', Validators.required],
             annotation: '',
             speaker: this.fb.group({
