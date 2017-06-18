@@ -69,6 +69,8 @@
         </div>
 
         <div class="form-group">
+            <button type="button" class="btn btn-warning" (click)="testSet()">Test set</button>
+            <button type="button" class="btn btn-warning" (click)="testPatch()">Test patch</button>
             <button type="button" class="btn btn-warning" (click)="eventForm.reset()">Reset</button>
             <button type="button" class="btn btn-success" (click)="addEvent()" [disabled]="eventForm.pending || eventForm.invalid">Invia</button>
         </div>

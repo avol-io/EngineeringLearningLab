@@ -57,4 +57,35 @@ export class AddEventComponent {
     addEvent(): void {
         this.submitted = true;
     }
+
+    testSet(): void {
+        this.eventForm.setValue({
+            title: 'my title',
+            type: 'my type',
+            description: 'my description',
+            annotation: 'my annotation',
+            speaker: {
+                name: 'my name',
+                surname: 'my surname',
+                email: 'my email',
+                address: {
+                    street: 'my street',
+                    postalCode: 'my postal code',
+                    city: 'my city'
+                }
+            }
+        });
+    }
+
+    testPatch(): void {
+        this.eventForm.patchValue({
+            title: 'my title',
+            speaker: {
+                name: 'my name',
+                address: {
+                    street: 'my street'
+                }
+            }
+        })
+    }
 }
