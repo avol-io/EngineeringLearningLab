@@ -18,7 +18,7 @@ export class AddEventComponent {
         this.submitted = false;
         this.eventTypes = this.eventsService.getEventTypes();
         this.createForm();
-        // this.logChanges();
+        this.logChanges();
     }
 
     createForm(): void {
@@ -27,8 +27,8 @@ export class AddEventComponent {
         // });
 
         this.eventForm = this.fb.group({
-            title: ['', Validators.required],
             type: '',
+            title: ['', Validators.required],
             description: ['', Validators.required],
             annotation: ''
         });
