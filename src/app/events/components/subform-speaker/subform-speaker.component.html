@@ -1,0 +1,39 @@
+<div [formGroup]="speakerForm" class="well well-lg">
+    <h4>Speaker</h4>
+    <div class="form-group">
+        <label class="center-block">Nome:
+            <input class="form-control" formControlName="name">
+        </label>
+    </div>
+    <div class="form-group">
+        <label class="center-block">Cognome:
+            <input class="form-control" formControlName="surname">
+        </label>
+    </div>
+    <div class="form-group">
+        <label class="center-block">E-mail:
+            <input class="form-control" formControlName="email">
+        </label>
+        <div *ngIf="speakerForm.controls.email.dirty && speakerForm.controls.email.hasError('validateEmail')" class="input-error-message">Indirizzo e-mail non valido</div>
+        <div *ngIf="speakerForm.controls.email.dirty && speakerForm.controls.email.hasError('emailAlreadyExist')" class="input-error-message">Indirizzo e-mail già registrato</div>
+        <div *ngIf="speakerForm.controls.email.dirty && speakerForm.controls.email.hasError('serverError')" class="input-error-message">Impossibile verificare l'indirizzo e-mail</div>
+    </div>
+    <div formGroupName="address" class="row">
+        <div class="col-xs-4">
+            <label class="center-block">Indirizzo:
+                <input class="form-control" formControlName="street">
+            </label>
+        </div>
+        <div class="col-xs-4">
+            <label class="center-block">CAP:
+                <input class="form-control" formControlName="postalCode">
+            </label>
+            <div *ngIf="speakerForm.controls.address.controls.postalCode.dirty && speakerForm.controls.address.controls.postalCode.hasError('pattern')" class="input-error-message">Codice CAP non valido</div>
+        </div>
+        <div class="col-xs-4">
+            <label class="center-block">Comune:
+                <input class="form-control" formControlName="city">
+            </label>
+        </div>
+    </div>
+</div>

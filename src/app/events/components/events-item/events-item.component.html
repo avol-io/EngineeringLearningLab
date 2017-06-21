@@ -1,0 +1,11 @@
+<div class="event-item">
+    
+    <div class="stretta"><img [src]="model.video.preview" class="preview"/><span class="glyphicon star" [ngClass]="{'glyphicon-star-empty': !model.favorite,'glyphicon-star':model.favorite}"  (click)="onFavorito(model)"></span></div>
+    <div class="principale">
+        <span class="title">{{model.title}}</span>
+        <span class="date">{{model.date}}</span>
+        <span class="description">{{model.description}}</span>
+        <!--<div [innerHTML]="event.video.embedded">
+        </div>-->
+    </div>
+</div>

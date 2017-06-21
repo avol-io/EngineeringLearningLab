@@ -1,11 +1,11 @@
+import { EventsPageComponent } from './events/components/events-page/events-page.component';
 import { HomeComponent } from './events/components/home/home.component';
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 
 const routes: Routes = [
-    { path: '', redirectTo: '/home', pathMatch: 'full' },
-    { path: 'home',  component: HomeComponent },
+    { path: '', redirectTo: '/eventi', pathMatch: 'full' },
     // { path: 'proposals/:id/edit',  component: ProposalEditComponent }
 ];
 

@@ -1,0 +1,77 @@
+<div class="container" [hidden]="submitted">
+    <h2>Inserisci evento</h2>
+    <h3><i>Inserisci un nuovo evento</i></h3>
+    <form [formGroup]="eventForm" novalidate>
+        <div class="form-group">
+            <label class="center-block">Tipo:
+                <select class="form-control" formControlName="type">
+                    <option value=""></option>
+                    <option *ngFor="let t of eventTypes" [value]="t">{{t}}</option>
+                </select>
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="center-block">Titolo:
+                <input class="form-control" formControlName="title" data-error="Bruh, that email address is invalid">
+            </label>
+            <div *ngIf="eventForm.controls.title.dirty && eventForm.controls.title.hasError('required')" class="input-error-message">Campo obbligatorio</div>
+        </div>
+        <div class="form-group">
+            <label class="center-block">Descrizione:
+                <textarea rows="3" class="form-control" formControlName="description"></textarea>
+            </label>
+            <div *ngIf="eventForm.controls.description.dirty && eventForm.controls.description.hasError('required')" class="input-error-message">Campo obbligatorio</div>
+        </div>
+        <div class="form-group">
+            <label class="center-block">Note:
+                <textarea rows="2" class="form-control" formControlName="annotation"></textarea>
+            </label>
+        </div>
+
+        <subform-speaker [parentForm]="eventForm"></subform-speaker>
+
+        <div class="form-group">
+            <button type="button" class="btn btn-warning" (click)="eventForm.reset()">Reset</button>
+            <button type="button" class="btn btn-success" (click)="addEvent()" [disabled]="eventForm.pending || eventForm.invalid">Invia</button>
+        </div>
+    </form>
+    <p>Form value: {{ eventForm.value | json }}</p>
+    <p>Form status: {{ eventForm.status | json }}</p>
+    <p>Form pristine: {{ eventForm.pristine | json }}</p>
+    <p>Form touched: {{ eventForm.touched | json }}</p>
+</div>
+
+
+<div class="container" [hidden]="!submitted">
+    <h2>Hai inserito un nuovo evento:</h2>
+    <table class="table table-striped">
+        <tbody>
+        <tr *ngIf="eventForm.controls.type.value !== ''">
+            <th>Tipo</th>
+            <td>{{eventForm.get('type').value}}</td>
+        </tr>
+        <tr>
+            <th>Titolo</th>
+            <td>{{eventForm.get('title').value}}</td>
+        </tr>
+        <tr>
+            <th>Descrizione</th>
+            <td>{{eventForm.get('description').value}}</td>
+        </tr>
+        <tr *ngIf="eventForm.controls.annotation.value !== ''">
+            <th>Note</th>
+            <td>{{eventForm.get('annotation').value}}</td>
+        </tr>
+
+        <tr *ngIf="eventForm.controls.speaker.dirty">
+            <th>Speaker</th>
+            <td>{{eventForm.get('speaker.name').value + ' ' + eventForm.get('speaker.surname').value}}</td>
+        </tr>
+        <tr *ngIf="eventForm.controls.speaker.controls.address.dirty">
+            <th>Domicilio speaker</th>
+            <td>{{eventForm.get('speaker.address.street').value + ', ' + eventForm.get('speaker.address.postalCode').value + ', ' + eventForm.get('speaker.address.city').value}}</td>
+        </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-success" (click)="submitted=false">Indietro</button>
+</div>

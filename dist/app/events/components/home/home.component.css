@@ -21,13 +21,13 @@
   position: absolute;
   bottom: 0px; }
 
-.form {
+.join-us {
   margin: auto;
   margin-top: 1em; }
-  .form .input-group {
+  .join-us .input-group {
     margin: auto;
     max-width: 400px; }
-  .form .invia {
+  .join-us .invia {
     display: block;
     margin: auto;
     margin-top: 0.5em; }
