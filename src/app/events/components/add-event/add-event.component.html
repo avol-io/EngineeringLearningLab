@@ -40,38 +40,3 @@
     <p>Form pristine: {{ eventForm.pristine | json }}</p>
     <p>Form touched: {{ eventForm.touched | json }}</p>
 </div>
-
-
-<div class="container" [hidden]="!submitted">
-    <h2>Hai inserito un nuovo evento:</h2>
-    <table class="table table-striped">
-        <tbody>
-        <tr *ngIf="eventForm.controls.type.value !== ''">
-            <th>Tipo</th>
-            <td>{{eventForm.get('type').value}}</td>
-        </tr>
-        <tr>
-            <th>Titolo</th>
-            <td>{{eventForm.get('title').value}}</td>
-        </tr>
-        <tr>
-            <th>Descrizione</th>
-            <td>{{eventForm.get('description').value}}</td>
-        </tr>
-        <tr *ngIf="eventForm.controls.annotation.value !== ''">
-            <th>Note</th>
-            <td>{{eventForm.get('annotation').value}}</td>
-        </tr>
-
-        <tr *ngIf="eventForm.controls.speaker.dirty">
-            <th>Speaker</th>
-            <td>{{eventForm.get('speaker.name').value + ' ' + eventForm.get('speaker.surname').value}}</td>
-        </tr>
-        <tr *ngIf="eventForm.controls.speaker.controls.address.dirty">
-            <th>Domicilio speaker</th>
-            <td>{{eventForm.get('speaker.address.street').value + ', ' + eventForm.get('speaker.address.postalCode').value + ', ' + eventForm.get('speaker.address.city').value}}</td>
-        </tr>
-        </tbody>
-    </table>
-    <button class="btn btn-success" (click)="submitted=false">Indietro</button>
-</div>

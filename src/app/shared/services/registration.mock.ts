@@ -44,4 +44,5 @@ export const USERS_MOCK: User[] = [
     new User('Fabio', 'Siliberto', 'fabio.siliberto@eng.it', 'password1', 'Ponte Galeria (RM)', 1),
     new User('Alessandro', 'Avolio', 'alessandro.avolio@eng.it', 'password2', 'Ponte Galeria (RM)', 2),
     new User('Umberto', 'Tarantino', 'umberto.tarantino@eng.it', 'password3', 'Ponte Galeria (RM)', 3),
+    new User('Test', 'Test', 'a@a.it', 'a', 'Ponte Galeria (RM)', 4)
 ];

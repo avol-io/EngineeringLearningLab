@@ -1,0 +1,28 @@
+<div class="container">
+    <h2>Login</h2>
+    <div class="loading" *ngIf="loading"></div>
+    <div class="error" *ngIf="error">{{error}}</div>
+    <form [formGroup]="loginForm" [hidden]="loading">
+        <div class="form-group">
+            <label class="center-block">Email:
+                <input class="form-control" formControlName="email" data-error="Bruh, that email address is invalid">
+            </label>
+            <div *ngIf="loginForm.get('email').dirty && loginForm.get('email').hasError('required')"
+                 class="input-error-message">Campo obbligatorio
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="center-block">Password:
+                <input class="form-control" type="password" formControlName="password">
+            </label>
+            <div *ngIf="loginForm.get('password').dirty && loginForm.get('password').hasError('required')"
+                 class="input-error-message">Campo obbligatorio
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button type="button" class="btn btn-success" routerLink="/home">indietro</button>
+            <button type="submit" class="btn btn-success" (click)="login()">Login</button>
+        </div>
+    </form>
+</div>

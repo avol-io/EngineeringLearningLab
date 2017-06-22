@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {User} from "../../../shared/models/user.model";
 import {Response} from "../../../shared/models/response.model";
 import {RegistrationService} from "../../../shared/services/registration.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Subscription} from "rxjs/Subscription";
 
 @Component({
@@ -21,6 +21,7 @@ export class UserDetailComponent implements OnInit, OnDestroy {
     private subscription: Subscription;
 
     constructor(private registrationService: RegistrationService,
+                private router: Router,
                 private activatedRoute: ActivatedRoute) {
     }
 
@@ -57,5 +58,14 @@ export class UserDetailComponent implements OnInit, OnDestroy {
                 this.loading = false;
                 this.error = response.error;
             });
+    }
+
+    protected logout(){
+        this.loading = true;
+        this.registrationService.logout()
+            .then( response => {
+                this.loading = false;
+                this.router.navigate(['home']);
+            })
     }
 }

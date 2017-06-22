@@ -1,12 +1,14 @@
 import { Media } from './media.models';
+import {User} from "./user.model";
 export class Event {
-
     private _title: string;
     private _description: string;
     private _date: Date;
     private _slide: Media;
     private _video: Media;
     private _favorite:boolean = false;
+    private _id: number;
+    private _speaker: User;
 
     public get title(): string {
         return this._title;
@@ -57,5 +59,19 @@ export class Event {
 		this._favorite = value;
 	}
 
+    get id(): number {
+        return this._id;
+    }
 
+    set id(value: number) {
+        this._id = value;
+    }
+
+    get speaker(): User {
+        return this._speaker;
+    }
+
+    set speaker(value: User) {
+        this._speaker = value;
+    }
 }

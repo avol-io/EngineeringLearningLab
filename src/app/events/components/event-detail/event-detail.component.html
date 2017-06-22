@@ -1,0 +1,26 @@
+<div class="container" >
+    <h2>Dettaglio Evento:</h2>
+    <div class="loading" *ngIf="loading"></div>
+    <div class="error" *ngIf="error">{{error}}</div>
+    <ng-container *ngIf="!loading && !error">
+        <img [src]="model.video.preview" class="preview image-preview"/>
+        <table class="table table-striped">
+            <tbody>
+                    <tr>
+                <th>Titolo</th>
+                <td>{{model.title}}</td>
+            </tr>
+            <tr>
+                <th>Descrizione</th>
+                <td>{{model.description}}</td>
+            </tr>
+
+            <tr *ngIf="model.speaker">
+                <th>Speaker</th>
+                <td>{{model.speaker.stringify()}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </ng-container>
+    <button class="btn btn-success" routerLink="/eventi/list">Indietro</button>
+</div>

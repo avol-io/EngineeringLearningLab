@@ -11,6 +11,19 @@
     background-size: 550px;
 }
 
+.logged-user {
+    font-size: 2rem;
+    font-weight: bolder;
+    text-align: right;
+    float: right;
+    padding-right: 3rem;
+
+    .btn-login {
+        background-color: cornflowerblue;
+        color: white;
+    }
+}
+
 .mammachebrutto {
     position: absolute;
     top: 0px;

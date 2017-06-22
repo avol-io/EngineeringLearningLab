@@ -1,6 +1,7 @@
 import { NgModule }     from '@angular/core';
 import {FormsModule, ReactiveFormsModule}  from '@angular/forms';
 import {RegistrationService} from "./services/registration.service";
+import {LoginGuard} from "./services/login-guard.service";
 
 @NgModule({
     imports: [
@@ -13,6 +14,7 @@ import {RegistrationService} from "./services/registration.service";
     ],
     declarations: [],
     providers: [
+        LoginGuard,
         RegistrationService
     ]
 })

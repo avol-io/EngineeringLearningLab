@@ -6,6 +6,8 @@ import {RegistrationComponent} from "./components/registration/registration.comp
 import {UsersRoutingModule} from "./users.routing";
 import {UsersComponent} from "./users.component";
 import {UserDetailComponent} from "./components/user-detail/user-detail.component";
+import {LoginComponent} from "./components/login/login.component";
+import {PermissionDeniedComponent} from "./components/permission-denied/permission-denied.component";
 
 @NgModule({
     imports: [
@@ -17,6 +19,8 @@ import {UserDetailComponent} from "./components/user-detail/user-detail.componen
     declarations: [
         UsersComponent,
         UserDetailComponent,
+        LoginComponent,
+        PermissionDeniedComponent,
         RegistrationComponent
     ],
     providers: [

@@ -9,6 +9,7 @@ import {EventsComponent} from './events.component';
 import {CommonModule} from '@angular/common';
 import {AddEventComponent} from "./components/add-event/add-event.component";
 import {SubformSpeakerComponent} from "./components/subform-speaker/subform-speaker.component";
+import {EventDetailComponent} from "./components/event-detail/event-detail.component";
 
 @NgModule({
     imports: [
@@ -21,6 +22,7 @@ import {SubformSpeakerComponent} from "./components/subform-speaker/subform-spea
         EventsComponent,
         EventsPageComponent,
         EventsItemComponent,
+        EventDetailComponent,
         AddEventComponent,
         SubformSpeakerComponent
     ],

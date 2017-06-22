@@ -1,6 +1,16 @@
 <div class=" " [ngClass]="{'defaultpage':defaultPage}">
   <div class="header-bg">
     <img src="/images/header.svg" class="header-bg">
+
+    <div class="logged-user">
+      <ng-container *ngIf="user">
+        Utente loggato:
+        <a routerLink="/utenti/{{user.id}}">{{user.stringify()}}</a>
+      </ng-container>
+      <ng-container *ngIf="!user">
+        <button class="btn btn-login" routerLink="/utenti">Login</button>
+      </ng-container>
+    </div>
     <div>
       <router-outlet></router-outlet>
     </div>

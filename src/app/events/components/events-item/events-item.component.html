@@ -5,7 +5,12 @@
         <span class="title">{{model.title}}</span>
         <span class="date">{{model.date}}</span>
         <span class="description">{{model.description}}</span>
+        <br>
+        <span class="speaker">{{model.speaker.stringify()}}</span>
         <!--<div [innerHTML]="event.video.embedded">
         </div>-->
+    </div>
+    <div class="btn-event-detail">
+        <button class="btn btn-success" (click)="goToEventDetail()">Dettaglio</button>
     </div>
 </div>

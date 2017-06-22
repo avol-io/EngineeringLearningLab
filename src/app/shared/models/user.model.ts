@@ -58,4 +58,8 @@ export class User {
     set venue(value: string) {
         this._venue = value;
     }
+
+    public stringify(){
+        return this.name + ' ' + this.surname;
+    }
 }
