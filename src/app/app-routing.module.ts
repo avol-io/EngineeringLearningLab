@@ -5,6 +5,7 @@ import {PageNotFoundComponent} from "./page-not-found.component";
 
 const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
+    { path: 'sotto-albero', loadChildren: 'app/users/users.module#UsersModule'},
     { path: '**', component: PageNotFoundComponent}
 ];
 

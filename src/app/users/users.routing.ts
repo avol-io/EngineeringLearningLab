@@ -12,22 +12,26 @@ import {LoginGuard} from "../shared/services/login-guard.service";
         RouterModule.forChild([
             {path: 'permesso-negato', component: PermissionDeniedComponent},
             {
-            path: 'utenti',
-            component: UsersComponent,
-            children: [
-                {path: 'login', component: LoginComponent},
-                {path: 'registrazione', component: RegistrationComponent},
-                {path: 'profilo',
-                    canActivate: [LoginGuard],
-                    component: UserDetailComponent,
-                    data: {title: 'Profilo utente'}},
-                {path: 'profilo-altro-titolo',
-                    canActivate: [LoginGuard],
-                    component: UserDetailComponent,
-                    data: {title: 'Altro titolo'}},
-                {path: '', redirectTo: '/utenti/login', pathMatch: 'full'}
-            ]
-        }])
+                path: 'utenti',
+                component: UsersComponent,
+                children: [
+                    {path: 'login', component: LoginComponent},
+                    {path: 'registrazione', component: RegistrationComponent},
+                    {
+                        path: 'profilo',
+                        canActivate: [LoginGuard],
+                        component: UserDetailComponent,
+                        data: {title: 'Profilo utente'}
+                    },
+                    {
+                        path: 'profilo-altro-titolo',
+                        canActivate: [LoginGuard],
+                        component: UserDetailComponent,
+                        data: {title: 'Altro titolo'}
+                    },
+                    {path: '', redirectTo: 'utenti/login', pathMatch: 'full'}
+                ]
+            }])
     ]
 })
 
