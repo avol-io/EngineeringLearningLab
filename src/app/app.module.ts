@@ -6,18 +6,20 @@ import { AppComponent }  from './app.component';
 import { SharedModule } from './shared/shared.module';
 import {UsersModule} from "./users/users.module";
 import {CoreModule} from "./home/home.module";
+import {PageNotFoundComponent} from "./page-not-found.component";
 
 @NgModule({
   imports: [ 
       BrowserModule,
-      AppRoutingModule,
       SharedModule,
       CoreModule,
       UsersModule,
-      EventsModule
-    ],
+      EventsModule,
+      AppRoutingModule
+  ],
   declarations: [ 
-      AppComponent
+      AppComponent,
+      PageNotFoundComponent
     ],
   providers: [ ],
   bootstrap: [ AppComponent ]
