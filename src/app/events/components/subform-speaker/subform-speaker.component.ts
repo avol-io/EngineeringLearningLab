@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from "@angular/core";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {validateEmail} from "../../../shared/validators/email.validator";
 import {emailUnique} from "../../../shared/validators/email-unique.async-validator";
-import {RegistrationService} from "../../services/registration.service";
+import {RegistrationService} from "../../../shared/services/registration.service";
 
 @Component({
     moduleId: module.id,

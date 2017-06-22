@@ -4,12 +4,14 @@ export class User {
     private _surname: string;
     private _email: string;
     private _venue: string;
+    private _password: string;
 
-    constructor(name: string, surname: string, email: string, venue: string, id?: number) {
+    constructor(name: string, surname: string, email: string, password: string, venue: string, id?: number) {
         this._id = id;
         this._name = name;
         this._surname = surname;
         this._email = email;
+        this._password = password;
         this._venue = venue;
     }
 
@@ -43,6 +45,10 @@ export class User {
 
     set email(value: string) {
         this._email = value;
+    }
+
+    get password() {
+        return this._password;
     }
 
     get venue(): string {

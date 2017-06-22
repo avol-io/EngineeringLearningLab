@@ -40,35 +40,3 @@
         margin-top: 0.5em;
     }
 }
-
-canvas {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    z-index: -3;
-}
-
-.mammachebrutto {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    z-index: -2;
-    background: url(/images/footer.svg);
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    min-height: 100vh;
- 
-    width: 100vw; // height: 600px;
-}
-
-@media (max-width:320px) {
-    .dettaglio {
-        // transform: none;
-        // width: 90vw;
-        width: 85vw;
-        // margin: auto;
-    }
-    .mammachebrutto{
-           height: 120%;
-    }
-}

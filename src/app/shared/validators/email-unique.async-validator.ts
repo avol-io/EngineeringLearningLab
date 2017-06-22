@@ -1,5 +1,5 @@
 import {FormControl} from '@angular/forms';
-import {RegistrationService} from '../../events/services/registration.service';
+import {RegistrationService} from '../services/registration.service';
 
 export const emailUnique = (service: RegistrationService) => {
     return (control: FormControl) => {

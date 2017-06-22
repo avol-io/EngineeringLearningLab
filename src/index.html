@@ -6,7 +6,6 @@
   <base href="/">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles.css">
   <!-- inject:css -->
   <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
   <link href="styles/main.css" rel="stylesheet" type="text/css" />
@@ -17,8 +16,12 @@
 <body>
 
 
-  <my-app>Loading..</my-app>
-  <div class="mammachebrutto"></div>
+  <my-app>
+    <div class="center-loading">
+      <div class="loading"></div>
+        Loading...
+    </div>
+  </my-app>
   <!-- inject:js -->
   <script src="node_modules/core-js/client/shim.min.js"></script>
   <script src="node_modules/zone.js/dist/zone.js"></script>

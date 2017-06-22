@@ -1,3 +1,4 @@
+import {User} from "../../shared/models/user.model";
 export const VENUES_MOCK: Array<string> = [
     'Roma',
     'Ponte Galeria (RM)',
@@ -39,7 +40,8 @@ export const VENUES_MOCK: Array<string> = [
     'ALTRO'
 ];
 
-export const EMAILS_MOCK: Array<string> = [
-    'umberto.tarantino@eng.it',
-    'alessandro.avolio@eng.it'
+export const USERS_MOCK: User[] = [
+    new User('Fabio', 'Siliberto', 'fabio.siliberto@eng.it', 'password1', 'Ponte Galeria (RM)', 1),
+    new User('Alessandro', 'Avolio', 'alessandro.avolio@eng.it', 'password2', 'Ponte Galeria (RM)', 2),
+    new User('Umberto', 'Tarantino', 'umberto.tarantino@eng.it', 'password3', 'Ponte Galeria (RM)', 3),
 ];

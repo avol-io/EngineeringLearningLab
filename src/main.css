@@ -4,3 +4,41 @@
 body{
   font-family: 'Open Sans', sans-serif;
 }
+
+.error {
+  display: table;
+  border: 2px solid red;
+  border-radius: 0.3em;
+  color: white;
+  font-size: 2.5em;
+  background-color: rgba(249, 67, 67, 0.74);
+  padding: 1rem;
+  margin: 1rem 0 1rem 0;
+}
+
+.center-loading {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 20%;
+}
+
+.loading {
+  border: 1rem solid #f3f3f3;
+  border-top: 1rem solid #3498db;
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+  animation: spin 1.5s linear infinite;
+  margin-left: calc(50% - 3rem);
+
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
