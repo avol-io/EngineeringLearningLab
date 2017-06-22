@@ -11,7 +11,7 @@ export class LoginGuard implements CanActivate {
     canActivate() {
         console.log('Guardia chiamata');
         if(!this.registrationService.isUserLogged()){
-            this.router.navigate(['permission-denied']);
+            this.router.navigate(['permesso-negato']);
             return false;
         }
         return true;

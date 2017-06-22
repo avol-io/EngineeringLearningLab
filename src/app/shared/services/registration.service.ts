@@ -3,6 +3,7 @@ import {USERS_MOCK, VENUES_MOCK} from "./registration.mock";
 import {User} from "../models/user.model";
 import {Response} from "../models/response.model";
 import {Subject} from "rxjs/Subject";
+import {BehaviorSubject} from "rxjs/BehaviorSubject";
 
 @Injectable()
 export class RegistrationService {
@@ -10,13 +11,13 @@ export class RegistrationService {
 
     private _sedi: Array<string>;
     private _users: Array<User>;
-    loggedUser: Subject<User>;
+    loggedUser: BehaviorSubject<User>;
     private logged: boolean;
 
     constructor() {
         this._sedi = VENUES_MOCK;
         this._users = USERS_MOCK;
-        this.loggedUser = new Subject<User>();
+        this.loggedUser = new BehaviorSubject<User>(null);
         this.logged = false;
     }
 

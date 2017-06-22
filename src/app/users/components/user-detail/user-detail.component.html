@@ -1,8 +1,7 @@
 <div class="container">
-    <h2>Utente</h2>
+    <h2>{{title}}</h2>
     <div class="loading" *ngIf="loading"></div>
-    <div class="error" *ngIf="error">{{error}}</div>
-    <ng-container *ngIf="!loading && ! error">
+    <ng-container *ngIf="!loading">
         <div class="row">
             <div class="col-xs-3">Nome</div>
             <div class="col-xs-9 pull-left">{{model.name}}</div>
@@ -20,7 +19,9 @@
             <div class="col-xs-9 pull-left">{{model.venue}}</div>
         </div>
         <br>
-        <button class="btn btn-success" routerLink="/home">Indietro</button>
-        <button class="btn btn-success" (click)="logout()">Logout</button>
+        <ng-container *ngIf="!lookup">
+            <button class="btn btn-success" routerLink="/home">Indietro</button>
+            <button class="btn btn-success" (click)="logout()">Logout</button>
+        </ng-container>
     </ng-container>
 </div>

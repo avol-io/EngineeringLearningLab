@@ -16,7 +16,7 @@ import {PermissionDeniedComponent} from "./components/permission-denied/permissi
             children: [
                 {path: 'login', component: LoginComponent},
                 {path: 'registrazione', component: RegistrationComponent},
-                {path: ':ID_USER', component: UserDetailComponent},
+                {path: 'profilo', component: UserDetailComponent, data: {title: 'Profilo utente'}},
                 {path: '', redirectTo: '/utenti/login', pathMatch: 'full'}
             ]
         }])

@@ -20,7 +20,7 @@ import {LoginGuard} from "../shared/services/login-guard.service";
                 // {path: 'registrazione', component: RegistrationComponent},
                 {path: 'aggiungi', component: AddEventComponent},
                 {path: 'list', component: EventsPageComponent},
-                { path: ':ID_EVENT', component: EventDetailComponent},
+                {path: ':ID_EVENT', component: EventDetailComponent},
                 {path: '', redirectTo: '/eventi/list', pathMatch: 'full'}
             ]
         }])]

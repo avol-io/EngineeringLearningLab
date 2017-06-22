@@ -5,7 +5,7 @@
     <div class="logged-user">
       <ng-container *ngIf="user">
         Utente loggato:
-        <a routerLink="/utenti/{{user.id}}">{{user.stringify()}}</a>
+        <a routerLink="/utenti/profilo">{{user.stringify()}}</a>
       </ng-container>
       <ng-container *ngIf="!user">
         <button class="btn btn-login" routerLink="/utenti">Login</button>

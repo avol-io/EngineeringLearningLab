@@ -33,7 +33,7 @@ export class RegistrationComponent implements OnInit {
         this.registrationService.registerUser(this.model)
             .then((response: Response) => {
                 let user: User = response.data;
-                this.router.navigate(['utenti', user.id]);
+                this.router.navigate(['utenti', 'profilo']);
             })
             .catch((response: Response) => {
                 this.submitted = false;

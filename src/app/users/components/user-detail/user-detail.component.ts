@@ -1,6 +1,5 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from "@angular/core";
 import {User} from "../../../shared/models/user.model";
-import {Response} from "../../../shared/models/response.model";
 import {RegistrationService} from "../../../shared/services/registration.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Subscription} from "rxjs/Subscription";
@@ -13,12 +12,10 @@ import {Subscription} from "rxjs/Subscription";
 })
 
 export class UserDetailComponent implements OnInit, OnDestroy {
-    private sedi: Array<string>;
     private model: User;
-    private submitted: boolean;
-    private error: string;
     private loading: boolean;
-    private subscription: Subscription;
+    private subRouteParam: Subscription;
+    private title: string;
 
     constructor(private registrationService: RegistrationService,
                 private router: Router,
@@ -26,44 +23,34 @@ export class UserDetailComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        this.subscription = this.activatedRoute.params.subscribe( (params) => {
-            this.error = null;
-            let id = +params['ID_USER'];
-            if(id){
-                this.loadUser(id);
-            } else {
-                this.error = 'Il path parameter non è un numero!';
+        this.subRouteParam = this.activatedRoute.data.subscribe((data) => {
+            let title = data['title'];
+            if (title) {
+                this.title = title;
             }
-        })
+        });
+
+        this.loadUser();
     }
 
-    ngOnDestroy(){
-        this.subscription.unsubscribe();
+    ngOnDestroy() {
+        this.subRouteParam.unsubscribe();
     }
 
-    private loadUser(id: number){
+    private loadUser() {
         this.loading = true;
-        this.error = null;
-        this.registrationService.getUser(id)
-            .then( (response: Response) => {
+        this.registrationService.loggedUser.subscribe((user) => {
+            if(user) {
                 this.loading = false;
-                let user = response.data;
-                if(user){
-                    this.model = user;
-                } else {
-                    this.error = 'Errore strano';
-                }
-            })
-            .catch( (response: Response) => {
-                this.loading = false;
-                this.error = response.error;
-            });
+                this.model = user;
+            }
+        });
     }
 
-    protected logout(){
+    protected logout() {
         this.loading = true;
         this.registrationService.logout()
-            .then( response => {
+            .then(response => {
                 this.loading = false;
                 this.router.navigate(['home']);
             })
