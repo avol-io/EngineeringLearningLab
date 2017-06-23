@@ -24,9 +24,9 @@ export class EventDetailComponent implements OnInit{
 
     ngOnInit(){
         this.subscription = this.activatedRoute.params.subscribe( (params) => {
-            this.error = null;
             let id = +params['ID_EVENT'];
             if(id){
+                this.error = null;
                 this.loadEvent(id);
             } else {
                 this.error = 'Il path parameter non è un numero!';

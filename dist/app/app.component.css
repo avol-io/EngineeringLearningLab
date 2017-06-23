@@ -10,4 +10,52 @@
   background-position-y: -30px;
   background-size: 550px; }
 
+.logged-user {
+  font-size: 2rem;
+  font-weight: bolder;
+  text-align: right;
+  float: right;
+  padding-right: 3rem; }
+  .logged-user .btn-login {
+    background-color: cornflowerblue;
+    color: white; }
+
+.mammachebrutto {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -2;
+  background: url(/images/footer.svg);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  min-height: 100vh;
+  width: 100vw; }
+
+@media (max-width: 320px) {
+  .mammachebrutto {
+    height: 120%; } }
+
+canvas {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -3; }
+
+.mammachebrutto {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -2;
+  background: url(/images/footer.svg);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  min-height: 100vh;
+  width: 100vw; }
+
+@media (max-width: 320px) {
+  .dettaglio {
+    width: 85vw; }
+  .mammachebrutto {
+    height: 120%; } }
+
 /*# sourceMappingURL=app.component.css.map */

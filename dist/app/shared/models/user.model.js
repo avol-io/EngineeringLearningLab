@@ -1,11 +1,11 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var User = (function () {
-    function User(name, surname, email, venue, id) {
+    function User(name, surname, email, password, venue, id) {
         this._id = id;
         this._name = name;
         this._surname = surname;
         this._email = email;
+        this._password = password;
         this._venue = venue;
     }
     Object.defineProperty(User.prototype, "id", {
@@ -48,6 +48,13 @@ var User = (function () {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(User.prototype, "password", {
+        get: function () {
+            return this._password;
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(User.prototype, "venue", {
         get: function () {
             return this._venue;
@@ -58,6 +65,9 @@ var User = (function () {
         enumerable: true,
         configurable: true
     });
+    User.prototype.stringify = function () {
+        return this.name + ' ' + this.surname;
+    };
     return User;
 }());
 exports.User = User;
