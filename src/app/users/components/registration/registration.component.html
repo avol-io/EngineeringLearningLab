@@ -42,6 +42,7 @@
                 <option *ngFor="let sede of sedi" [value]="sede">{{sede}}</option>
             </select>
         </div>
+        <button type="button" class="btn btn-success" routerLink="/home">Indietro</button>
         <button type="submit" class="btn btn-success" [disabled]="myForm.form.invalid">Invia</button>
     </form>
 

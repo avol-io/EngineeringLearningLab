@@ -37,7 +37,7 @@ export class RegistrationService {
         })
     }
 
-    registerUser(user: User): Promise<Response> {
+    registerUser(user: User): Promise<Response | boolean> {
         let response = new Response();
         return this.emailUsed(user.email)
             .then( used => {

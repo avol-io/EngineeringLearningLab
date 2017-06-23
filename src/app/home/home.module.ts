@@ -7,8 +7,8 @@ import {CommonModule} from "@angular/common";
 @NgModule({
     imports: [
         CommonModule,
-        HomeRoutingModule,
-        SharedModule
+        SharedModule,
+        HomeRoutingModule
     ],
     declarations: [
         HomeComponent

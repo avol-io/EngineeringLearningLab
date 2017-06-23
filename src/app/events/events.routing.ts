@@ -13,14 +13,9 @@ import {LoginGuard} from "../shared/services/login-guard.service";
             component: EventsComponent,
             canActivate: [LoginGuard],
             children: [
-                // Dettaglio utente, separa dettaglio da aggiungi,
-                // query param per lista solo preferiti (oppure anche ricerca)
-                // Guardie di registrazione
-                // Titolo dettaglio utente passato da parametro (utente, speaker)
-                // {path: 'registrazione', component: RegistrationComponent},
                 {path: 'aggiungi', component: AddEventComponent},
                 {path: 'list', component: EventsPageComponent},
-                {path: ':ID_EVENT', component: EventDetailComponent},
+                {path: ':ID_EVENTO', component: EventDetailComponent},
                 {path: '', redirectTo: '/eventi/list', pathMatch: 'full'}
             ]
         }])]
