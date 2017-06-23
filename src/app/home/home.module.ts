@@ -1,12 +1,12 @@
 import {NgModule} from "@angular/core";
-import {BrowserModule} from "@angular/platform-browser";
 import {HomeComponent} from "./home.component";
 import {SharedModule} from "../shared/shared.module";
 import {HomeRoutingModule} from "./home-routing.module";
+import {CommonModule} from "@angular/common";
 
 @NgModule({
     imports: [
-        BrowserModule,
+        CommonModule,
         HomeRoutingModule,
         SharedModule
     ],
@@ -17,5 +17,5 @@ import {HomeRoutingModule} from "./home-routing.module";
     bootstrap: []
 })
 
-export class CoreModule {
+export class HomeModule {
 }

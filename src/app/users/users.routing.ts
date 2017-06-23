@@ -29,7 +29,7 @@ import {LoginGuard} from "../shared/services/login-guard.service";
                         component: UserDetailComponent,
                         data: {title: 'Altro titolo'}
                     },
-                    {path: '', redirectTo: 'utenti/login', pathMatch: 'full'}
+                    {path: '', redirectTo: '/utenti/login', pathMatch: 'full'}
                 ]
             }])
     ]

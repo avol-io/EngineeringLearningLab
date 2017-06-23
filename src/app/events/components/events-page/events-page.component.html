@@ -1,6 +1,9 @@
-<div class="events container"><h2> Lista degli eventi: </h2>
-<div class="container">
-    <event-item *ngFor="let event of events" [event]="event" (onFavorito)="manageFavorito($event)">
-    </event-item>
-</div>
+<div class="events container">
+    <h2> Lista degli eventi</h2>
+    <label>Filtra eventi:</label>
+    <input type="text" [formControl]="searchControl" (change)="search()">
+    <div class="container">
+        <event-item *ngFor="let event of events" [event]="event" (onFavorito)="manageFavorito($event)">
+        </event-item>
+    </div>
 </div>
