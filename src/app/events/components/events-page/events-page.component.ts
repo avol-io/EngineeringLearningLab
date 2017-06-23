@@ -67,7 +67,6 @@ export class EventsPageComponent implements OnInit, OnDestroy {
     }
 
     search(){
-        console.log('navigate');
         let params = {};
         let searchString = this.searchControl.value;
         if(searchString){
