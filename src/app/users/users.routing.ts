@@ -18,7 +18,7 @@ import {LoginGuard} from "../shared/services/login-guard.service";
                     {path: 'login', component: LoginComponent},
                     {path: 'registrazione', component: RegistrationComponent},
                     {
-                        path: 'profilo',
+                        path: 'profilo/:id',
                         canActivate: [LoginGuard],
                         component: UserDetailComponent,
                         data: {title: 'Profilo utente'}
