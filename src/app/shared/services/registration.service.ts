@@ -44,7 +44,6 @@ export class RegistrationService {
         return this.http.get(this.usersUrl)
         .toPromise()
         .then(response => {
-            // let o = response.json() ? response.json().value as User[] : [];
             let o = response.json() ? response.json().data as User[] : [];
             let result = o.find((item) => item.email === value);
             if (result) {
